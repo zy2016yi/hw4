@@ -1,0 +1,44 @@
+
+fir= imread('test1.pgm');
+
+fir1= imgaussfilt(fir,'FilterSize',3);
+fir2= imgaussfilt(fir,'FilterSize',5);
+fir3= imgaussfilt(fir,'FilterSize',7);
+
+sec= imread('test2.tif');
+sec1= imgaussfilt(sec,'FilterSize',3);
+sec2= imgaussfilt(sec,'FilterSize',5);
+sec3= imgaussfilt(sec,'FilterSize',7);
+figure;
+
+
+subplot(2,2,1)
+imshow(fir)
+title('原始图像');
+subplot(2,2,2)
+imshow(fir1)
+title('高斯平缓滤波3*3');
+subplot(2,2,3)
+imshow(fir2)
+title('高斯平缓滤波5*5');
+subplot(2,2,4)
+imshow(fir3)
+title('高斯平缓滤波7*7');
+saveas(gcf, '1.png');
+
+figure;
+
+subplot(2,2,1)
+imshow(sec)
+title('原始图像');
+subplot(2,2,2)
+imshow(sec1)
+title('高斯平缓滤波3*3');
+subplot(2,2,3)
+imshow(sec2)
+title('高斯平缓滤波5*5');
+subplot(2,2,4)
+imshow(sec3)
+title('高斯平缓滤波7*7');
+saveas(gcf, '2.png');
+

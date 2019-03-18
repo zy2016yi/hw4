@@ -1,0 +1,26 @@
+
+fir= imread('test1.pgm');
+
+fir1= imgaussfilt(fir,1.5);
+
+sec= imread('test2.tif');
+sec1= imgaussfilt(sec,1.5);
+
+figure;
+
+
+subplot(2,2,1)
+imshow(fir)
+title('test1');
+subplot(2,2,2)
+imshow(fir1)
+title('高斯滤波方差1.5test1');
+subplot(2,2,3)
+imshow(sec)
+title('test2');
+subplot(2,2,4)
+imshow(sec1)
+title('高斯滤波方差1.5test2');
+saveas(gcf, '5.png');
+
+

@@ -1,0 +1,72 @@
+figure;
+pi1= imread('test3_corrupt.pgm');unsharp(pi1,1);
+saveas(gcf, '6.png');
+figure;
+pi2= imread('test4 copy.bmp');
+
+unsharp(pi2,1);
+saveas(gcf, '7.png');
+
+out1=edge(pi1,'Sobel');
+out2=edge(pi1,'log');
+out3=edge(pi1,'Canny');
+
+out4=edge(pi2,'Sobel');
+out5=edge(pi2,'log');
+out6=edge(pi2,'Canny');
+
+figure;
+subplot(1,2,1)
+imshow(pi1)
+title('原始图像');
+subplot(1,2,2)
+imshow(out1)
+title('sobel');
+saveas(gcf, '8.png');
+
+figure;
+subplot(1,2,1)
+imshow(pi2)
+title('原始图像');
+subplot(1,2,2)
+imshow(out4)
+title('sobel');
+saveas(gcf, '9.png');
+
+figure;
+subplot(1,2,1)
+imshow(pi1)
+title('原始图像');
+subplot(1,2,2)
+imshow(out2)
+title('log');
+saveas(gcf, '10.png');
+
+figure;
+subplot(1,2,1)
+imshow(pi2)
+title('原始图像');
+subplot(1,2,2)
+imshow(out5)
+title('log');
+saveas(gcf, '11.png');
+
+figure;
+subplot(1,2,1)
+imshow(pi1)
+title('原始图像');
+subplot(1,2,2)
+imshow(out3)
+title('Canny');
+saveas(gcf, '12.png');
+
+figure;
+subplot(1,2,1)
+imshow(pi2)
+title('原始图像');
+subplot(1,2,2)
+imshow(out6)
+title('Canny');
+saveas(gcf, '13.png');
+
+

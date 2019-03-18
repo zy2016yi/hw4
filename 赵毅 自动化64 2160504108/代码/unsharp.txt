@@ -1,0 +1,23 @@
+function unsharp(fir,k)
+[hang,lie]=size(fir);
+fir1= imgaussfilt(fir,'FilterSize',3);
+g1=ones(hang,lie);
+for i=1:hang
+    for j=1:lie
+        g1(i,j)=fir(i,j)-fir1(i,j);
+    end
+end
+output=ones(hang,lie);
+for i=1:hang
+    for j=1:lie
+        output(i,j)=fir(i,j)+k*g1(i,j);
+    end
+end
+
+subplot(1,2,1)
+imshow(fir)
+title('Ô­Ê¼Í¼Ïñ');
+subplot(1,2,2)
+imshow(fir1)
+title('·ÇÈñ»¯ÑÚ±ÎÍ¼Ïñ');
+
